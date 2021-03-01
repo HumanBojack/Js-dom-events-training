@@ -115,3 +115,27 @@ function onPreBtnClick(event){
 	allCards.appendChild(firstCard);
 }
 preBtn.addEventListener("click", onPreBtnClick);
+
+
+// 9 Secret fonctionnalities (use a, y, p and b on the logo)
+let logo = document.querySelector(".navbar-brand");
+
+function onKeyPress(event){
+	document.body.classList.remove("mr-auto", "mx-auto", "ml-auto");
+	switch(event.key){
+		case("a"):
+			document.body.classList.add("col-4", "mr-auto");
+			break;
+		case("y"):
+			document.body.classList.add("col-4", "mx-auto");
+			break;
+		case("p"):
+			document.body.classList.add("col-4", "ml-auto");
+			break;
+		case("b"):
+			document.body.classList.remove("col-4");
+			break;
+		}
+}
+
+logo.addEventListener("keypress", onKeyPress);
