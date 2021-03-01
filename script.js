@@ -101,5 +101,17 @@ function onNextBtnClick(event){
 }
 nextBtn.addEventListener("click", onNextBtnClick);
 
-// firstCard = document.querySelector(".col-md-4");
 
+// 8 Carrousel the other way around
+let preBtn = document.querySelector(".btn-primary");
+// let allCards;  ==> You should declare it, but because i already declared it in 7 i won't do it
+// let firstCard; ==> Same here
+
+function onPreBtnClick(event){
+	event.preventDefault();
+	allCards = document.getElementsByClassName("row")[1];
+	firstCard = allCards.firstElementChild;
+	allCards.removeChild(firstCard);
+	allCards.appendChild(firstCard);
+}
+preBtn.addEventListener("click", onPreBtnClick);
