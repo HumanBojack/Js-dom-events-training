@@ -58,3 +58,33 @@ function onNavbarDoubleClick(){
 	}
 };
 navbar.addEventListener("dblclick", onNavbarDoubleClick);
+
+// 6 On "view" hover
+let cards = document.getElementsByClassName("row")[1].children;
+let card;
+
+function onViewHover(event){
+	card = event.originalTarget.parentElement.parentElement.parentElement.parentElement.parentElement;
+	
+	if (card.querySelector("p").style.length > 0){
+
+		card.querySelector("img").style = "";
+		card.querySelector("p").style = "";
+		card.querySelector(".text-muted").style = "";
+
+	} else if (card.querySelector("p").style.length === 0){
+
+		card.querySelector("img").style = "width: 20%;";
+		card.querySelector("p").style = "display: none;";
+		card.querySelector(".text-muted").style = "display: none;";
+
+	}
+
+};
+for (card of cards){
+	let viewBtn = card.querySelector(".btn-success");
+	viewBtn.addEventListener("mouseenter", onViewHover);
+}
+
+
+
