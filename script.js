@@ -10,14 +10,14 @@ footer.addEventListener("click", onFooterClick);
 
 // 2 Hamburger menu
 let buttonToggler = document.querySelector(".navbar-toggler");
-let navbar = document.getElementById("navbarHeader");
+let navbarHeader = document.getElementById("navbarHeader");
 let navbarDeployed = false;
 function navbarExpand() {
 	if (navbarDeployed === true){
-		navbar.classList.add("collapse");
+		navbarHeader.classList.add("collapse");
 		navbarDeployed = false;
 	} else if (navbarDeployed === false){
-		navbar.classList.remove("collapse");
+		navbarHeader.classList.remove("collapse");
 		navbarDeployed = true;
 	}
 }
@@ -46,4 +46,15 @@ function onEditButtonClick2(){
 }
 secondCardButton.addEventListener("click", onEditButtonClick2)
 
-// 
+// 5 Remove cdn when double click on navbar
+let navbar = document.querySelector("header");
+let style = document.styleSheets[0]
+
+function onNavbarDoubleClick(){
+	if (style.disabled === true){
+		style.disabled = false
+	} else if (style.disabled === false){
+		style.disabled = true
+	}
+};
+navbar.addEventListener("dblclick", onNavbarDoubleClick);
