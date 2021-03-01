@@ -86,5 +86,20 @@ for (card of cards){
 	viewBtn.addEventListener("mouseenter", onViewHover);
 }
 
+// 7 Carrousel
+let nextBtn = document.querySelector(".btn-secondary");
+let allCards;
+let lastCard;
 
+function onNextBtnClick(event){
+	event.preventDefault();
+	allCards = document.getElementsByClassName("row")[1];
+	lastCard = allCards.lastElementChild;
+	allCards.removeChild(lastCard)
+	allCards.prepend(lastCard)
+
+}
+nextBtn.addEventListener("click", onNextBtnClick);
+
+// firstCard = document.querySelector(".col-md-4");
 
